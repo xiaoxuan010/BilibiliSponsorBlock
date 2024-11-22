@@ -34,6 +34,8 @@ interface SBConfig {
     enableAutoSkipDanmakuSkip: boolean;
     enableMenuDanmakuSkip: boolean;
     danmakuRegexPattern: string;
+    danmakuTimeMatchingRegexPattern: string;
+    danmakuOffsetMatchingRegexPattern: string;
     checkTimeDanmakuSkip: boolean;
     muteSegments: boolean;
     fullVideoSegments: boolean;
@@ -216,6 +218,9 @@ const syncDefaults = {
     enableAutoSkipDanmakuSkip: false,
     enableMenuDanmakuSkip: false,
     danmakuRegexPattern: "(?:空降\\s*)?(\\d{1,2})[:：](\\d{1,2})(?:[:：](\\d{1,2}))?$",
+    danmakuTimeMatchingRegexPattern:
+        "(?:(\\d{1,2})\\s*(?:小时|h|H|:|：|；|;|\\.|-|—)\\s*)?(?:(\\d{1,2})\\s*(?:分钟|分|:|：|；|;|\\.|-|—|m|M)\\s*)?(?:(\\d{1,2})\\s*(秒|s|S)?)",
+    danmakuOffsetMatchingRegexPattern: "(?:^|(右|右滑|按|右下|右向|右方向|→|⇒|⇢|⇨|⮕|🡆|🠺|🠾|🢒|👉))(\\d+)(下|次)?$",
     checkTimeDanmakuSkip: true,
 
     muteSegments: true,
