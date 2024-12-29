@@ -54,6 +54,11 @@ export function parseTime(text: string) {
                 hoursNum = 0;
             }
 
+            // 忽略无效的时间
+            if (minutesNum >= 60 || secondsNum >= 60) {
+                continue;
+            }
+
             return hoursNum * 3600 + minutesNum * 60 + secondsNum;
         }
     }

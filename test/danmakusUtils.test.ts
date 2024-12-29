@@ -20,7 +20,7 @@ describe("解析中文数字", () => {
 });
 
 describe("从弹幕解析时间", () => {
-    const noTimeTestCases = ["哔哩哔哩 (゜-゜)つロ 干杯~"];
+    const noTimeTestCases = ["哔哩哔哩 (゜-゜)つロ 干杯~", "空降9:99"];
     noTimeTestCases.forEach((testCase) => {
         test(`解析无关弹幕 “${testCase}” `, () => {
             expect(parseTime(testCase)).toBe(null);
