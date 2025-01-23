@@ -1,4 +1,4 @@
-import { CalculateAvidToBvid } from "../src/utils/bvidAvidUtils";
+import { CalculateAvidToBvid, CalculateBvidToAvid } from "../src/utils/bvidAvidUtils";
 const testCases: [number | string, string][] = [
     [2, "BV1xx411c7mD"],
     ["170001", "BV17x411w7KC"],
@@ -20,7 +20,7 @@ describe("AV号转BV号", () => {
 describe("BV号转AV号", () => {
     testCases.forEach(([avid, bvid]) => {
         test(`${bvid} -> av${avid}`, () => {
-            expect(CalculateAvidToBvid(avid)).toBe(bvid);
+            expect(CalculateBvidToAvid(bvid)).toBe(Number(avid));
         });
     });
 });
